@@ -16,14 +16,11 @@ serial.onDataReceived(serial.delimiters(Delimiters.Comma), function () {
         698,
         196
         ]
-        // let randTune;
-        // startButton.addEventListener("click", () => {
         randTune = randomTones[Math.floor(Math.random() * randomTones.length)]
         for (let index2 = 0; index2 < 3; index2++) {
             music.playTone(randTune, music.beat(BeatFraction.Whole))
             basic.pause(1000)
         }
-        // tune.innerHTML = randTune;
         theTunes = randomTones
         index = theTunes.indexOf(randTune)
         theTunes.removeAt(index)
@@ -38,7 +35,6 @@ serial.onDataReceived(serial.delimiters(Delimiters.Comma), function () {
             music.playTone(value, music.beat(BeatFraction.Whole))
             basic.pause(1000)
         }
-        // guessTunes.splice(Math.random() * guessTunes.length, 0, randTune);
         theTunes.push(randTune)
         choiceTime = true
         while (choiceTime) {
